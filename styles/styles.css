@@ -369,5 +369,5 @@ button {
 }
 .chooseMovie ul {
   text-align: center;
-  margin-top: 50px;
+  margin: 50px auto;
 }

@@ -3,6 +3,7 @@ const horrorRoulette = {};
 //api key
 const key = "45f22f9138c47be66457a712c0db3872"
 
+// method to call api
 horrorRoulette.getMovie = function () {
     const horrorUrl = new URL(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27&sort_by=vote_average.desc&vote_count.gte=10`)
 
@@ -22,6 +23,7 @@ horrorRoulette.getMovie = function () {
         });
 }
 
+//method to display movies on page
 horrorRoulette.displayMovies = function (movies) {
     movies.forEach(function (movie) {
         const movieTitle = document.createElement("h3");
@@ -31,12 +33,14 @@ horrorRoulette.displayMovies = function (movies) {
     })
 }
 
+// event listener to trigger api call
 horrorRoulette.movieButton = function () {
     document.querySelector("button").addEventListener("click", function (e) {
         horrorRoulette.getMovie();
     })
 }
 
+// init method
 horrorRoulette.init = function () {
     horrorRoulette.movieButton()
 };
