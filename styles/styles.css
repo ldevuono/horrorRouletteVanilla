@@ -293,22 +293,9 @@ button {
   all: unset;
 }
 
-header {
+html {
   background-color: black;
   color: red;
-  text-align: center;
-  height: 100vh;
-  padding-top: 50px;
-}
-header span {
-  display: block;
-}
-header a {
-  display: inline-block;
-  border: 5px red solid;
-  padding: 10px;
-  cursor: pointer;
-  margin-top: 50px;
 }
 
 html {
@@ -321,4 +308,45 @@ h1 {
 }
 h1 span {
   font-size: 6.5rem;
+}
+
+header {
+  text-align: center;
+  height: 100vh;
+  padding-top: 100px;
+}
+header span {
+  display: block;
+}
+header a {
+  display: inline-block;
+  border: 5px red solid;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.rouletteHeader {
+  height: 50vh;
+}
+.rouletteHeader a {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  margin-top: 0;
+}
+
+button {
+  border: 5px red solid;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.chooseMovie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
