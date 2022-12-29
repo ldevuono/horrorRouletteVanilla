@@ -14,9 +14,18 @@ button {
     border: 5px red solid;
     padding: 10px;
     cursor: pointer;
+    width: 160px;
+    text-align: center;
 }
 
 .chooseMovie {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+    ul {
+        text-align: center;
+        margin-top: 50px;
+    }
 }

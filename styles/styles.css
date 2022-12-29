@@ -298,6 +298,14 @@ html {
   color: red;
 }
 
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+  -webkit-box-shadow: 0 0 30px 10px red;
+          box-shadow: 0 0 30px 10px red;
+}
+
 html {
   font-family: "Creepster", cursive;
   font-size: 125%;
@@ -340,13 +348,26 @@ button {
   border: 5px red solid;
   padding: 10px;
   cursor: pointer;
+  width: 160px;
+  text-align: center;
 }
 
 .chooseMovie {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.chooseMovie ul {
+  text-align: center;
+  margin-top: 50px;
 }
