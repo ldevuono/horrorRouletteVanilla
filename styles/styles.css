@@ -320,8 +320,6 @@ h1 span {
 
 header {
   text-align: center;
-  height: 100vh;
-  padding-top: 100px;
 }
 header span {
   display: block;
@@ -334,8 +332,13 @@ header a {
   margin-top: 50px;
 }
 
+.indexHeader {
+  height: 100vh;
+  padding-top: 100px;
+}
+
 .rouletteHeader {
-  height: 50vh;
+  padding: 50px 0;
 }
 .rouletteHeader a {
   position: absolute;
@@ -370,4 +373,12 @@ button {
 .chooseMovie ul {
   text-align: center;
   margin: 50px auto;
+}
+.chooseMovie ul p {
+  width: 50%;
+  margin: 10px auto;
+}
+.chooseMovie ul img {
+  width: 250px;
+  margin: 10px auto;
 }

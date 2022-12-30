@@ -1,6 +1,6 @@
 //HEADER
 .rouletteHeader {
-    height: 50vh;
+    padding: 50px 0;
 
     a {
         position: absolute;
@@ -27,5 +27,17 @@ button {
     ul {
         text-align: center;
         margin: 50px auto;
+
+        p {
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        img {
+            width: 250px;
+            margin: 10px auto;
+        }
     }
+
+
 }

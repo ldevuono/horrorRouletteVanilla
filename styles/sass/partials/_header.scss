@@ -4,8 +4,6 @@ header {
     }
 
     text-align:center;
-    height:100vh;
-    padding-top: 100px;
 
     a {
         display: inline-block;
@@ -14,4 +12,9 @@ header {
         cursor: pointer;
         margin-top: 50px;
     }
+}
+
+.indexHeader {
+    height: 100vh;
+    padding-top: 100px;
 }
