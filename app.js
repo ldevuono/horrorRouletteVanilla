@@ -2,11 +2,19 @@ const horrorRoulette = {};
 
 //api key
 const key = "45f22f9138c47be66457a712c0db3872"
-const year = 2022
+const year = 1974
 
+
+
+// horrorRoulette.getYear = function () {
+//     document.querySelector("button.giveMovie").addEventListener("click", function (e) {
+//         e.preventDefault();
+//         console.log(input)
+//     })
+// }
 // method to call api
 horrorRoulette.getMovie = function () {
-    const horrorUrl = new URL(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27&without_genres=10402,10751,35,16&primary_release_year=${year}`)
+    const horrorUrl = new URL(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27&without_genres=10402,10751,35,16&include_adult=true&primary_release_year=${year}`)
 
     //search params
     horrorRoulette.search = new URLSearchParams({
@@ -20,7 +28,6 @@ horrorRoulette.getMovie = function () {
             return res.json();
         })
         .then(function (jsonRes) {
-            console.log(jsonRes.results);
             const randomMovie = jsonRes.results[Math.floor(Math.random() * jsonRes.results.length)];
             horrorRoulette.displayMovies(randomMovie);
             console.log(randomMovie)
@@ -52,7 +59,7 @@ horrorRoulette.displayMovies = function (movie) {
 
 // event listener to trigger api call
 horrorRoulette.movieButton = function () {
-    document.querySelector("button").addEventListener("click", function (e) {
+    document.querySelector("button.giveMovie").addEventListener("click", function (e) {
         horrorRoulette.getMovie();
     })
 }
@@ -60,6 +67,7 @@ horrorRoulette.movieButton = function () {
 // init method
 horrorRoulette.init = function () {
     horrorRoulette.movieButton()
+    horrorRoulette.getYear()
 };
 
 horrorRoulette.init();
