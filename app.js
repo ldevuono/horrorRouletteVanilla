@@ -2,7 +2,7 @@ const horrorRoulette = {};
 
 //api key
 const key = "45f22f9138c47be66457a712c0db3872"
-const year = 1974
+const year = 2012
 
 
 
