@@ -5,8 +5,10 @@ html {
 
 h1 {
     font-size: 4rem;
+    transition: .3s ease;
 
     span {
         font-size: 6.5rem;
+        transition: .3s ease;
     }
 }

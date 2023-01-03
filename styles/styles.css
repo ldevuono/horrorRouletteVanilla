@@ -313,9 +313,13 @@ html {
 
 h1 {
   font-size: 4rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 h1 span {
   font-size: 6.5rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 header {
@@ -338,7 +342,7 @@ header a {
 }
 
 .rouletteHeader {
-  padding: 50px 0;
+  padding: 65px 0;
 }
 .rouletteHeader a {
   position: absolute;
@@ -382,4 +386,60 @@ button {
 .chooseMovie ul img {
   width: 250px;
   margin: 10px auto;
+}
+.chooseMovie select {
+  border: none;
+  font-family: "Creepster", cursive;
+  background: black;
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.chooseMovie form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 800px) {
+  .rouletteHeader h1 {
+    font-size: 3.5rem;
+    padding-top: 70px;
+  }
+}
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 3.2rem;
+  }
+  header h1 span {
+    font-size: 4.5rem;
+  }
+  .rouletteHeader h1 {
+    font-size: 2.5rem;
+  }
+  .chooseMovie ul p {
+    width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header h1 span {
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 450px) {
+  .rouletteHeader h1 {
+    font-size: 1.9rem;
+    margin: 0;
+    padding: auto 0;
+  }
 }

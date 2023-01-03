@@ -1,6 +1,6 @@
 //HEADER
 .rouletteHeader {
-    padding: 50px 0;
+    padding: 65px 0;
 
     a {
         position: absolute;
@@ -40,5 +40,19 @@ button {
         }
     }
 
+    select {
+        border: none;
+        font-family: 'Creepster', cursive;
+        background: black;
+        color: red;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
 
 }
