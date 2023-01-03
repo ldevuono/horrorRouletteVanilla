@@ -2,27 +2,35 @@ const horrorRoulette = {};
 
 //api key
 const key = "45f22f9138c47be66457a712c0db3872"
-const year = 2012
+const form = document.querySelector("form");
 
+// event listener to get user input (release year)
+horrorRoulette.getYear = function () {
+    form.addEventListener("change", function () {
+        let year = document.getElementById("year").value;
+        horrorRoulette.giveMeAMovie(year);
+    })
+}
 
+//attach event listener to movie button
+horrorRoulette.giveMeAMovie = function (year) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        horrorRoulette.getMovie(year);
+    })
+}
 
-// horrorRoulette.getYear = function () {
-//     document.querySelector("button.giveMovie").addEventListener("click", function (e) {
-//         e.preventDefault();
-//         console.log(input)
-//     })
-// }
 // method to call api
-horrorRoulette.getMovie = function () {
+horrorRoulette.getMovie = function (year) {
     const horrorUrl = new URL(`https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27&without_genres=10402,10751,35,16&include_adult=true&primary_release_year=${year}`)
-
+    // vote_average = ${ userInput }
     //search params
     horrorRoulette.search = new URLSearchParams({
         api_key: key,
         primary_release_year: year,
+        // vote_average: userInput,
         language: "en-US"
     });
-
     fetch(horrorUrl)
         .then(function (res) {
             return res.json();
@@ -30,18 +38,11 @@ horrorRoulette.getMovie = function () {
         .then(function (jsonRes) {
             const randomMovie = jsonRes.results[Math.floor(Math.random() * jsonRes.results.length)];
             horrorRoulette.displayMovies(randomMovie);
-            console.log(randomMovie)
         });
 }
 
 //method to display movies on page
 horrorRoulette.displayMovies = function (movie) {
-    // movies.forEach(function (movie) {
-    //     const movieTitle = document.createElement("h3");
-    //     movieTitle.innerHTML = movie.original_title;
-    //     const movieList = document.querySelector("ul")
-    //     movieList.appendChild(movieTitle);
-    // })
     document.querySelector("ul").innerHTML = " ";
     const movieTitle = document.createElement("h3");
     movieTitle.innerHTML = movie.title;
@@ -53,20 +54,11 @@ horrorRoulette.displayMovies = function (movie) {
     movieList.appendChild(movieTitle);
     movieList.appendChild(poster);
     movieList.appendChild(movieDesc);
-
-
 }
 
-// event listener to trigger api call
-horrorRoulette.movieButton = function () {
-    document.querySelector("button.giveMovie").addEventListener("click", function (e) {
-        horrorRoulette.getMovie();
-    })
-}
 
 // init method
 horrorRoulette.init = function () {
-    horrorRoulette.movieButton()
     horrorRoulette.getYear()
 };
 
